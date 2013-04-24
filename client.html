@@ -1,0 +1,22 @@
+<html>
+
+<head>
+<script src="http://localhost:3000/socket.io/socket.io.js"></script>
+<script>
+  var socket = io.connect('http://localhost:3000');
+  socket.on('output', function (data) {
+    for (var i in data) {
+    	var txt = document.createElement('span')
+    	txt.innerHTML = data[i] + "<br/>";
+    	document.getElementById('tail').appendChild(txt);
+    }
+  });
+</script>
+</head>
+
+<body>
+	<div id="tail" style="font-family: courier;">
+	</div>
+</body>
+
+</html>
