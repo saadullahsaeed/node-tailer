@@ -1,0 +1,12 @@
+body {
+	overflow: hidden;
+	background-color: #000000;
+}
+
+#content {
+	font-family: Courier;
+	color: #00AF3E;
+	height: 98%;
+	padding: 10px;
+	overflow: auto;
+}

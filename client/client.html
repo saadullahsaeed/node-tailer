@@ -1,0 +1,30 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+
+  <script>
+    var socket = io.connect('http://localhost:3000');
+    socket.on('output', function(data) {
+      for (var i in data) {
+      	var txt = document.createElement('span');
+      	txt.innerHTML = data[i] + "<br/>";
+
+        var content = document.getElementById('content');
+      	content.appendChild(txt);
+        content.scrollTop = content.scrollHeight;
+      }
+    });
+  </script>
+</head>
+
+
+<body>
+	<div id="content">
+	</div>
+</body>
+
+
+</html>
